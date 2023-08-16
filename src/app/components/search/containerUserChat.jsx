@@ -1,4 +1,4 @@
-const { default: UserChats } = require("./UserChats")
+import UserChats from "./userChats"
 
 const ContainerUserChats = () => {
     return(
