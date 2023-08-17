@@ -8,11 +8,13 @@ const NavBar = () => {
     }
 
     return(
-        <nav className="flex p-5 items-center justify-between">
-            <div className='flex items-center gap-4'>
-                <Image className='w-16 h-16 object-cover rounded-full' loader={imageLoader} src={'p.jpg'} width={0} height={0} alt='icon' priority/>
+        <nav className="h-14 flex p-5 items-center justify-between bg-slate-900">
+            <section className='flex items-center gap-4'>
+                <div className='w-10 h-10 overflow-hidden rounded-full'>
+                    <Image className='w-11 h-11 object-cover' loader={imageLoader} src={'p.jpg'} width={0} height={0} alt='icon'/>
+                </div>
                 <span className='capitalize text-lg font-semibold'>username</span>
-            </div>
+            </section>
                 <a href='#' className='text-green-400 font-semibold'>Logout</a>
         </nav>
     )

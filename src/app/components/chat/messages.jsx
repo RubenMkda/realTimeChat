@@ -3,7 +3,8 @@ const { default: Message } = require("./message")
 const Messages = () => {
     return(
         <>
-            <Message />
+            <Message user={true}/>
+            <Message user={false}/>
         </>
     )
 }
