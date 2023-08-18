@@ -12,6 +12,8 @@ const NavBar = () => {
         return user.photoURL
     }
 
+    console.log(user)
+
     return(
         <nav className="h-14 flex p-5 items-center justify-between bg-slate-900">
             <section className='flex items-center gap-4'>
@@ -20,7 +22,7 @@ const NavBar = () => {
                 </div>
                 <span className='capitalize text-lg font-semibold'>{user.displayName}</span>
             </section>
-            <button onClick={() => signOut(auth)} className="text-slate-950 font-semibold px-2 py-1 transition duration-300 bg-green-500 text-lg capitalize hover:bg-green-600">Logout</button>
+            <button onClick={() => signOut(auth)} className="text-slate-950 font-semibold px-2 py-1 transition duration-300 bg-green-500 text-lg capitalize hover:bg-green-400">Logout</button>
         </nav>
     )
 }

@@ -79,13 +79,13 @@ const FormSignUp = () => {
                 <label className="flex gap-3">
                     <input className="hidden" onChange={handleFileChange} ref={refUserIcon} type="file" accept="image/*"/>
 
-                    <input className="px-1 py-2 transition duration-300 bg-green-950 text-sm hover:bg-green-900" type="button" value="Choose Image" onClick={() => refUserIcon.current.click()} />
+                    <input className="text-slate-950 font-semibold px-2 py-3 transition duration-300 bg-green-500 text-sm hover:bg-green-400" type="button" value="Choose Image" onClick={() => refUserIcon.current.click()} />
 
                     {selectedImage && <Image className="w-10 h-10 object-cover rounded-full" src={selectedImage} width={0} height={0} alt="hola"/>}
                 </label>
 
                 {confirmPassword ? <p className="font-semibold">Password do not match</p> : ''}
-                <button className="w-1/3 px-1 py-2 transition duration-300 bg-green-950 text-lg uppercase hover:bg-green-900">Sign up</button>
+                <button className="cursor-default text-slate-950 font-semibold w-1/3 px-1 py-2 transition duration-300 bg-green-500 text-lg uppercase hover:bg-green-400">Sign up</button>
 
             </form>
         </main>

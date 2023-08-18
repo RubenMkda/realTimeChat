@@ -5,8 +5,8 @@ import MainLogin from "./components/mainLogin"
 const LoginUser = () => {
 
     return(
-        <main className="m-full h-full bg-neutral-950 text-zinc-200 flex items-center justify-center">
-            <section className="w-11/12 flex flex-col p-4 bg-neutral-900 md:w-6/12 rounded">
+        <main className="m-full h-full bg-slate-950 text-zinc-200 flex items-center justify-center">
+            <section className="w-11/12 flex flex-col p-4 bg-slate-900 md:w-6/12 rounded">
                 <HeaderLogin />
                 <MainLogin />
                 <FooterLogin />

@@ -27,7 +27,7 @@ const MainLogin = () => {
             <form onSubmit={handleForm} className="flex flex-col items-center justify-center p-2 gap-4">
                 <input onChange={e => setEmail(e.target.value)} className="w-full p-4 bg-transparent outline-0 border-b-2 border-green-400" type="email" placeholder="Email"/>
                 <input onChange={e => setPassword(e.target.value)} className="w-full p-4 bg-transparent outline-0 border-b-2 border-green-400" type="password" placeholder="Password"/>
-                <button type="submit" className="w-1/3 px-1 py-2 transition duration-300 bg-green-950 text-lg uppercase hover:bg-green-900">Sign in</button>
+                <button type="submit" className="cursor-default text-slate-950 font-semibold w-1/3 px-1 py-2 transition duration-300 bg-emerald-500 text-lg uppercase hover:bg-emerald-400">Sign in</button>
             </form>
         </main>
     )

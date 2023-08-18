@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <body className={inter.className + " w-screen h-screen text-zinc-200"}>
+      <body className={inter.className + " w-screen h-screen text-zinc-200 bg-slate-950 "}>
           {children}
       </body>
     </html>
