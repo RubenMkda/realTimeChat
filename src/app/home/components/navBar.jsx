@@ -1,10 +1,15 @@
 "use client";
+import { useAuthContext } from '@/context/AuthContext';
 import Image from 'next/image'
+import { signOut } from 'firebase/auth';
+import { auth } from '@/config';
 
 const NavBar = () => {
 
+    const { user } = useAuthContext()
+
     const imageLoader = () => {
-        return 'https://www.crowsworldofanime.com/wp-content/uploads/2022/09/Call_of_the_Night_Episode_11_Figure_05.jpg'
+        return user.photoURL
     }
 
     return(
@@ -13,9 +18,9 @@ const NavBar = () => {
                 <div className='w-10 h-10 overflow-hidden rounded-full'>
                     <Image className='w-11 h-11 object-cover' loader={imageLoader} src={'p.jpg'} width={0} height={0} alt='icon'/>
                 </div>
-                <span className='capitalize text-lg font-semibold'>username</span>
+                <span className='capitalize text-lg font-semibold'>{user.displayName}</span>
             </section>
-                <a href='#' className='text-green-400 font-semibold'>Logout</a>
+            <button onClick={() => signOut(auth)} className="text-slate-950 font-semibold px-2 py-1 transition duration-300 bg-green-500 text-lg capitalize hover:bg-green-600">Logout</button>
         </nav>
     )
 }

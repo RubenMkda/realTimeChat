@@ -1,7 +1,7 @@
 'use client'
-import LoadingData from "./LoadingData"
+import LoadingData from "../../components/LoadingData"
 import Image from "next/image"
-import signUp from "@/app/firebase/auth/signup"
+import signUp from "@/firebase/auth/signup"
 
 import { useRef, useState } from "react"
 import { useRouter } from "next/navigation"
@@ -14,7 +14,7 @@ const FormSignUp = () => {
     const [password2, setPassword2] = useState('')
     const [isSeddingData, setIsSeddingData] = useState(false)
     const [selectedImage, setSelectedImage] = useState(null);
-    const [username, setUsername] = useState('')
+    const [displayName, setDisplayName] = useState('')
     const [userIcon, setUserIcon] = useState(null)
 
     const refUserIcon = useRef()
@@ -39,7 +39,6 @@ const FormSignUp = () => {
         setConfirmPassword(false)
         setIsSeddingData(prevState => !prevState);
 
-
         if (!userIcon) {
             alert("Please choose a file first!")
             setIsSeddingData(prevState => !prevState);
@@ -52,7 +51,7 @@ const FormSignUp = () => {
             return
         }
 
-        const { result, error } = await signUp(email, password, username, userIcon)
+        const { result, error } = await signUp(email, password, displayName, userIcon)
 
         if(error){
             setIsSeddingData(prevState => !prevState);
@@ -61,7 +60,6 @@ const FormSignUp = () => {
 
         if(result){
             setIsSeddingData(prevState => !prevState);
-            alert('fino todo')
         }
 
         return router.push("/home")
@@ -73,12 +71,9 @@ const FormSignUp = () => {
 
             <form onSubmit={handleForm} className="flex flex-col items-center justify-center p-2 gap-4">
 
-                <input onChange={(e) => setUsername(e.target.value)} className="w-full p-4 bg-transparent outline-0 border-b-2 border-green-400" type="text" placeholder="Name" />
-
+                <input onChange={(e) => setDisplayName(e.target.value)} className="w-full p-4 bg-transparent outline-0 border-b-2 border-green-400" type="text" placeholder="Name" />
                 <input onChange={(e) => setEmail(e.target.value)} className="w-full p-4 bg-transparent outline-0 border-b-2 border-green-400" type="email" placeholder="Email" />
-
                 <input onChange={(e) => setPassword(e.target.value)} className="w-full p-4 bg-transparent outline-0 border-b-2 border-green-400" type="password" placeholder="Password"/>
-
                 <input onChange={(e) => setPassword2(e.target.value)} className="w-full p-4 bg-transparent outline-0 border-b-2 border-green-400" type="password" placeholder="Password"/>
 
                 <label className="flex gap-3">

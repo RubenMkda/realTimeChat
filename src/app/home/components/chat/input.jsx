@@ -1,4 +1,4 @@
-import { IconSendMessage } from "../assets/svgs"
+import { IconSendMessage } from "../../../components/assets/svgs"
 
 const InputSendMessage = () => {
     return(

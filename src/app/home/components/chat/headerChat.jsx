@@ -1,4 +1,4 @@
-import { GoBackIcon } from "../assets/svgs"
+import { GoBackIcon } from "../../../components/assets/svgs"
 
 const HeaderChat = () => {
     return(

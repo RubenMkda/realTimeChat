@@ -1,4 +1,4 @@
-import { ChatLink, FindUserLink, SettingsLink } from "@/app/const/const"
+import { ChatLink, FindUserLink, SettingsLink } from "@/app/components/const/const"
 
 const FooterHome = ({setMainMobile}) => {
     

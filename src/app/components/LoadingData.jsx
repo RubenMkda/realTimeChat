@@ -1,4 +1,4 @@
-const { SvgLoader } = require("../assets/svgs")
+const { SvgLoader } = require("./assets/svgs")
 
 const LoadingData = ({isSeddingData}) => {
     return(

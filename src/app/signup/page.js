@@ -1,4 +1,4 @@
-import SectionSignUp from "../components/signup/signup"
+import SectionSignUp from "./components/signup"
 
 const RegisterUser = () => {
     return(

@@ -1,4 +1,4 @@
-import {SearchIcon} from "../assets/svgs"
+import {SearchIcon} from "../../../components/assets/svgs"
 
 const SearchUser = () => {
     return(
