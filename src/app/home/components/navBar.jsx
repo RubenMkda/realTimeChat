@@ -12,8 +12,6 @@ const NavBar = () => {
         return user.photoURL
     }
 
-    console.log(user)
-
     return(
         <nav className="h-14 flex p-5 items-center justify-between bg-slate-900">
             <section className='flex items-center gap-4'>
