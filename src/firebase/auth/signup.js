@@ -10,25 +10,28 @@ const signUp = async(email, password, username, userIcon) => {
 
     let result = null, error = null
 
+    const usernameLowerCase = username.toLowerCase()
+
     try {
         result = await createUserWithEmailAndPassword(auth, email, password);
 
         const date = new Date().getTime()
-        const storageRef = ref(storage, `/icon/${username + date + userIcon.name}`);
+        const storageRef = ref(storage, `/icon/${usernameLowerCase + date + userIcon.name}`);
 
         await uploadBytesResumable(storageRef, userIcon).then(() => {
             getDownloadURL(storageRef).then(async (downloadURL) => {
                 try{
                     await updateProfile(result.user, {
-                        displayName: username,
+                        displayName: usernameLowerCase,
                         photoURL: downloadURL
                     })
 
                     await setDoc(doc(db, "users", result.user.uid), {
                         uid: result.user.uid,
-                        username,
+                        username: usernameLowerCase,
                         email,
-                        photoURL: downloadURL
+                        photoURL: downloadURL,
+                        searchableIndex
                     });
 
                     await setDoc(doc(db, "userChats", result.user.uid), {})

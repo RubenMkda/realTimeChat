@@ -1,17 +1,13 @@
 import { ChatLink, FindUserLink, SettingsLink } from "@/app/components/const/const"
-import ContainerUserChats from "../search/containerUserChat"
-import SearchUser from "../search/search"
 import Chat from "../chat/chat"
+import SectionUsersSearch from "./sectionUsersSearch"
 
 const MainMobile = ({mainMobile}) => {
 
     if (mainMobile === FindUserLink){
         return(
             <main className="w-full p-4 bg-slate-800 h-[calc(100%-104px)] overflow-x-auto md:h-full md:p-0">
-                <section className="md:hidden">
-                    <SearchUser />
-                    <ContainerUserChats />
-                </section>
+                <SectionUsersSearch />
             </main>
         )
     }
@@ -30,7 +26,7 @@ const MainMobile = ({mainMobile}) => {
         return(
             <main className="w-full bg-slate-800 h-[calc(100%-104px)] overflow-x-auto md:h-full md:p-0">
                 <section className="h-full md:hidden">
-                    <span>Seccion de settings al final del proyecto</span>
+                    <span>Sección de settings al final del proyecto</span>
                 </section>
             </main>
         )

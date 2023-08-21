@@ -1,10 +1,9 @@
-'use client'
-const { default: Image } = require("next/image")
+import Image from "next/image"
 
-const UserChats = () => {
+const UserChats = ({userData}) => {
 
     const imageLoader = () => {
-        return 'https://pbs.twimg.com/media/E1ZKLaNXEAUWd0E.jpg'
+        return userData.photoURL
     }
 
     return(
@@ -14,7 +13,7 @@ const UserChats = () => {
                 <Image className='w-11 h-11 md:w-10 md:h-10 object-cover' loader={imageLoader} src={'img.png'} alt="hola" width={0} height={0}/>
             </section>
             <section className="self-start p-1">
-                <p className="text-md">Username2</p>
+                <p className="text-md">{userData.username}</p>
                 <p className="text-[10px]">Último mensaje</p>
             </section>
             </header>
