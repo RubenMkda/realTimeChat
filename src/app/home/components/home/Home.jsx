@@ -17,20 +17,15 @@ const SectionHome = () => {
     const router = useRouter()
 
     useEffect(()=> {
-        if (user == null) {
-            router.push("/")
-            return
-        }
+        if (user == null) router.push('/')
+
         const destopkMediaQuery = window.matchMedia('(min-width: 768px)')
 
         setIsMobile(!destopkMediaQuery.matches)
 
         destopkMediaQuery.addEventListener('change', e => {
-            if(e.matches){
-                setIsMobile(false)
-            }else{
-                setIsMobile(true)
-            }
+            if(e.matches) setIsMobile(false)
+            else setIsMobile(true)
         })
     }, [user])
 
@@ -38,9 +33,11 @@ const SectionHome = () => {
 
     return(
         <section className="h-screen md:flex">
+
             <HeaderHome isMobile={isMobile}/>
             {isMobile ? <MainMobile mainMobile={mainMobile} /> : <MainHome/>}
             <FooterHome setMainMobile={setMainMobile}/>
+
         </section>
     )
 }
