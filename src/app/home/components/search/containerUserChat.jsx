@@ -7,7 +7,6 @@ const ContainerUserChats = ({usersData}) => {
             {usersData ? usersData.map((userData) => {
                 return <UserChats key={userData.uid} userData={userData}/>
             }) : ''}
-            {/* <UserChats /> */}
         </section>
     )
 }

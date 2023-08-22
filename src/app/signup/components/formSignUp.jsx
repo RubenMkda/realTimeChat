@@ -14,7 +14,7 @@ const FormSignUp = () => {
     const [password2, setPassword2] = useState('')
     const [isSeddingData, setIsSeddingData] = useState(false)
     const [selectedImage, setSelectedImage] = useState(null);
-    const [displayName, setDisplayName] = useState('')
+    const [username, setDisplayName] = useState('')
     const [userIcon, setUserIcon] = useState(null)
 
     const refUserIcon = useRef()
@@ -51,7 +51,7 @@ const FormSignUp = () => {
             return
         }
 
-        const { result, error } = await signUp(email, password, displayName, userIcon)
+        const { result, error } = await signUp(email, password, username, userIcon)
 
         if(error){
             setIsSeddingData(prevState => !prevState);
@@ -60,9 +60,8 @@ const FormSignUp = () => {
 
         if(result){
             setIsSeddingData(prevState => !prevState);
+            return router.push("/home")
         }
-
-        return router.push("/home")
     }
 
     return(
