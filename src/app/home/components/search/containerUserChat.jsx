@@ -1,14 +1,13 @@
-import UserChats from "./userChats"
+import SearchedChats from "./searchedChats"
 
-const ContainerUserChats = ({usersData}) => {
-
+const ContainerSearchedUser = ({usersData}) => {
     return(
         <section className="h-[calc(100%-48px)] overflow-y-auto scroll-p-0.5">
             {usersData ? usersData.map((userData) => {
-                return <UserChats key={userData.uid} userData={userData}/>
+                return <SearchedChats key={userData.uid} userData={userData}/>
             }) : ''}
         </section>
     )
 }
 
-export default ContainerUserChats
+export default ContainerSearchedUser

@@ -15,7 +15,7 @@ const SearchUser = ({setUsersData}) => {
     }
 
     return(
-        <section className="w-full rounded mb-3 ring-green-500 ring duration-300 hover:ring-4">
+        <section className="w-full rounded my-2 ring-green-500 ring duration-300 hover:ring-4">
             <header className="w-full flex">
 
                 <form onSubmit={handleSearch} className="w-full flex">

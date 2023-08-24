@@ -1,12 +1,15 @@
+import { useChathContext } from "@/context/chatContext"
 import { GoBackIcon } from "../../../components/assets/svgs"
 
 const HeaderChat = () => {
+
+    const { data } = useChathContext()
+
     return(
         <section className="flex items-center gap-3 p-2">
             <GoBackIcon />
             <div>
-                <p>UserName</p>
-                <p className="text-xs">En linea</p>
+                <p className='capitalize'>{data.user?.username}</p>
             </div>
         </section>
     )

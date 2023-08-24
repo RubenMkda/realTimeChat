@@ -3,6 +3,7 @@ import InputSendMessage from "./input"
 import Messages from "./messages"
 
 const Chat = () => {
+
     return(
         <section className="h-full flex flex-col">
             <header className="hidden h-14 p-2 bg-slate-950 md:flex items-center relative">

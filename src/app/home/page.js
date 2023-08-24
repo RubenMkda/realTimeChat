@@ -1,12 +1,15 @@
 'use client'
 import { AuthContextProvider } from "@/context/AuthContext"
 import SectionHome from "./components/home/Home"
+import { ChatContextProvider } from "@/context/chatContext"
 
 const UserHome = () => {
 
     return(
         <AuthContextProvider>
-            <SectionHome />
+            <ChatContextProvider>
+                <SectionHome />
+            </ChatContextProvider>
         </AuthContextProvider>
     )
 }
