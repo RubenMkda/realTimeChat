@@ -21,11 +21,11 @@ const ContainerUserChat = () => {
             
             return () => {
                 unsub()
+                setLoading(false)
             }
         }
         
         user.uid && getChats()
-        setLoading(false)
     }, [user.uid])
 
     if (loading){
@@ -34,15 +34,15 @@ const ContainerUserChat = () => {
                 <ChatLoader />
             </section>
         )
+    }else{
+        return (
+            <section className="h-[calc(100%-48px)] overflow-y-auto scroll-p-0.5">
+                {chats.length !== 0  ? Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => {
+                    return <UserChat key={chat[0]} userChat={chat[1]} />
+                }) : <EmptySearchedUsers />}
+            </section>
+        )
     }
-
-    return (
-        <section className="h-[calc(100%-48px)] overflow-y-auto scroll-p-0.5">
-            {chats.length !== 0  ? Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => {
-                return <UserChat key={chat[0]} userChat={chat[1]} />
-            }) : <EmptySearchedUsers />}
-        </section>
-    )
 }
 
 const EmptySearchedUsers = () => {
