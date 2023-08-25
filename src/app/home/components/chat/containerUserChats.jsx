@@ -17,15 +17,15 @@ const ContainerUserChat = () => {
             const unsub = onSnapshot(doc(db, 'userChats', user.uid), (doc) => {
                 const chatsData = doc.data() === {} ? doc.data() : []
                 setChats(chatsData)
-                setLoading(false)
             })
-
+            
             return () => {
                 unsub()
             }
         }
-
+        
         user.uid && getChats()
+        setLoading(false)
     }, [user.uid])
 
     if (loading){
