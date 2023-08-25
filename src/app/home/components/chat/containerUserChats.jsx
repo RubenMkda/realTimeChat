@@ -10,7 +10,7 @@ const ContainerUserChat = () => {
 
     const [chats, setChats] = useState([])
     const [loading, setLoading] = useState(true)
-    
+
     const { user } = useAuthContext()
 
     useEffect(() => {
@@ -50,7 +50,7 @@ const EmptySearchedUsers = () => {
     return (
         <section className="pt-5 h-full flex flex-col justify-center items-center md:h-[calc(100%-58px)]">
             <EmptySearchUsers />
-            <p className="text-center">You don't have chats, look for friends to start a chat.</p>
+            <p className="text-center">You don&apos;t have chats, look for friends to start a chat.</p>
         </section>
     )
 }
