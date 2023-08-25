@@ -1,11 +1,22 @@
+import { useChathContext } from "@/context/chatContext"
 import HeaderChat from "./headerChat"
 import InputSendMessage from "./input"
 import Messages from "./messages"
 
 const Chat = () => {
 
+    const { data } = useChathContext()
+
     return(
         <section className="h-full flex flex-col">
+            {data.chatId !== null ? <ChatUser /> : ''}
+        </section>
+    )
+}
+
+const ChatUser = () => {
+    return(
+        <>
             <header className="hidden h-14 p-2 bg-slate-950 md:flex items-center relative">
                 <HeaderChat />
             </header>
@@ -15,7 +26,13 @@ const Chat = () => {
             <footer className="h-14">
                 <InputSendMessage />
             </footer>
-        </section>
+        </>
+    )
+}
+
+const emptyChat = () => {
+    return (
+        <>hola</>
     )
 }
 

@@ -5,7 +5,6 @@ import { doc, onSnapshot } from "firebase/firestore"
 import { db } from "@/config"
 import { useAuthContext } from "@/context/AuthContext"
 
-
 const Messages = () => {
 
     const [messages, setMessages] = useState([])
@@ -24,16 +23,12 @@ const Messages = () => {
         }
     }, [data.chatId])
 
-    console.log(messages)
-
     return(
         <>
             {messages.map((message) => {
                 const isSendByThisUser = message.senderId !== user.uid
                 return <Message key={message.id} isSendByThisUser={isSendByThisUser} message={message}/>
             })}
-            {/* <Message user={true}/>
-            <Message user={false}/> */}
         </>
     )
 }

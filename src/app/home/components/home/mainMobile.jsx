@@ -6,7 +6,7 @@ const MainMobile = ({mainMobile}) => {
 
     if (mainMobile === FindUserLink){
         return(
-            <main className="w-full  bg-slate-800 h-[calc(100%-104px)] overflow-x-auto md:h-full md:p-0">
+            <main className="w-full bg-slate-800 h-[calc(100%-104px)] overflow-x-auto md:h-full md:p-0">
                 <SectionUsersSearch />
             </main>
         )

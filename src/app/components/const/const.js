@@ -7,3 +7,7 @@ export const SettingsLink = 'SETTINGS_LINK'
 export const SearchFriendLink = 'SEARCH_FRIENDS_LINK'
 
 export const UserChatsLink = 'USER_CHATS_LINK'
+
+export const ChangeUserChat = 'CHANGE_USER'
+
+export const ExitChat = 'EXIT_CHAT'
