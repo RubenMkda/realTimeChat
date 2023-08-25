@@ -4,7 +4,7 @@ const EmptyChat = () => {
     return(
         <>
             <SVGEmptyChat />
-            <p>You dont't have selected a chat.</p>
+            <p>You dont&apos;t have selected a chat.</p>
         </>
     )
 }
