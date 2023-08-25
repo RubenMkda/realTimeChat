@@ -6,7 +6,7 @@ import { useState } from "react"
 
 const SectionUsersSearch = () => {
 
-    const [usersData, setUsersData] = useState(null)
+    const [usersData, setUsersData] = useState([])
     const [mainSearch, setMainSearch] = useState(SearchFriendLink)
 
     return(

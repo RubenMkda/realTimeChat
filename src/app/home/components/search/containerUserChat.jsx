@@ -2,8 +2,7 @@ import { EmptySearchUsers } from "@/app/components/assets/svgs"
 import SearchedChats from "./searchedChats"
 
 const ContainerSearchedUser = ({usersData}) => {
-    console.log(usersData)
-
+ 
     return(
         <section className="h-[calc(100%-48px)] overflow-y-auto scroll-p-0.5">
             {usersData.length !== 0 ? usersData.map((userData) => {
