@@ -1,4 +1,4 @@
-import { EmptySearchUsers } from "@/app/components/assets/svgs"
+import { UserChatContainerEmpty } from "@/app/components/assets/svgs"
 import SearchedChats from "./searchedChats"
 
 const ContainerSearchedUser = ({usersData}) => {
@@ -15,8 +15,8 @@ const ContainerSearchedUser = ({usersData}) => {
 const EmptySearchedUsers = () => {
     return (
         <section className="h-full flex flex-col justify-center items-center md:h-[calc(100%-58px)]">
-            <EmptySearchUsers />
-            <p>No hemos encontrado usuarios todavia, busca personas del todo el mundo</p>
+            <UserChatContainerEmpty />
+            <p>We have not found users with this name.</p>
         </section>
     )
 }

@@ -2,11 +2,12 @@
 import { useEffect, useState } from "react"
 import FooterHome from "./footerHome"
 import HeaderHome from "./headerHome"
-import MainHome from "./mainHome"
+import MainHome from "./mainDestokp"
 import MainMobile from "./mainMobile"
 import { FindUserLink } from "@/app/components/const/const"
 import { useAuthContext } from "@/context/AuthContext"
 import { useRouter } from "next/navigation"
+import { MobileContextProvider } from "@/context/MobileContext"
 
 const SectionHome = () => {
 
@@ -32,13 +33,13 @@ const SectionHome = () => {
     if (user == null) return
 
     return(
-        <section className="h-screen md:flex">
-
-            <HeaderHome isMobile={isMobile}/>
-            {isMobile ? <MainMobile mainMobile={mainMobile} /> : <MainHome/>}
-            <FooterHome setMainMobile={setMainMobile}/>
-
-        </section>
+        <MobileContextProvider>
+            <section className="h-screen md:flex">
+                <HeaderHome isMobile={isMobile}/>
+                {isMobile ? <MainMobile /> : <MainHome/>}
+                <FooterHome />
+            </section>
+        </MobileContextProvider>
     )
 }
 

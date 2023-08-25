@@ -1,6 +1,9 @@
 import { ChatLink, FindUserLink, SettingsLink } from "@/app/components/const/const"
+import { useMobileContext } from "@/context/MobileContext"
 
-const FooterHome = ({setMainMobile}) => {
+const FooterHome = () => {
+
+    const { setMainMobile } = useMobileContext()
     
     return(
         <footer className="sticky bg-slate-950 bottom-0 h-12 md:hidden">

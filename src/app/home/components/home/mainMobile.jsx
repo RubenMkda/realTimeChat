@@ -1,8 +1,11 @@
 import { ChatLink, FindUserLink, SettingsLink } from "@/app/components/const/const"
 import Chat from "../chat/chat"
 import SectionUsersSearch from "./sectionUsersSearch"
+import { useMobileContext } from "@/context/MobileContext"
 
-const MainMobile = ({mainMobile}) => {
+const MainMobile = () => {
+
+    const { mainMobile } = useMobileContext()
 
     if (mainMobile === FindUserLink){
         return(

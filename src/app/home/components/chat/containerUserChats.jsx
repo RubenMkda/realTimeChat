@@ -4,24 +4,25 @@ import { doc, onSnapshot } from "firebase/firestore"
 import { db } from "@/config"
 import UserChat from "./userChat"
 import ChatLoader from "./chatsLoader"
+import { EmptySearchUsers } from "@/app/components/assets/svgs"
 
 const ContainerUserChat = () => {
 
     const [chats, setChats] = useState([])
     const [loading, setLoading] = useState(true)
-
+    
     const { user } = useAuthContext()
 
     useEffect(() => {
         const getChats = () => {
             const unsub = onSnapshot(doc(db, 'userChats', user.uid), (doc) => {
-                const chatsData = doc.data() === {} ? doc.data() : []
+                const chatsData = doc.data() !== {} ? doc.data() : []
                 setChats(chatsData)
+                setLoading(false)
             })
-            
+
             return () => {
                 unsub()
-                setLoading(false)
             }
         }
         
@@ -33,23 +34,23 @@ const ContainerUserChat = () => {
             <section className="h-[calc(100%-48px)] overflow-y-auto scroll-p-0.5">
                 <ChatLoader />
             </section>
-        )
-    }else{
-        return (
-            <section className="h-[calc(100%-48px)] overflow-y-auto scroll-p-0.5">
-                {chats.length !== 0  ? Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => {
-                    return <UserChat key={chat[0]} userChat={chat[1]} />
-                }) : <EmptySearchedUsers />}
-            </section>
-        )
+            )
     }
+
+    return (
+        <section className="h-[calc(100%-48px)] overflow-y-auto scroll-p-0.5">
+            {chats.length === 0 ? <EmptySearchedUsers /> : Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => {
+                 return <UserChat key={chat[0]} userChat={chat[1]} />
+            })}
+        </section>
+    )
 }
 
 const EmptySearchedUsers = () => {
     return (
-        <section className="h-full flex flex-col justify-center items-center md:h-[calc(100%-58px)]">
-            <EmptySearchedUsers />
-            <p>No hemos encontrado usuarios todavia, busca personas del todo el mundo</p>
+        <section className="pt-5 h-full flex flex-col justify-center items-center md:h-[calc(100%-58px)]">
+            <EmptySearchUsers />
+            <p className="text-center">You don't have chats, look for friends to start a chat.</p>
         </section>
     )
 }

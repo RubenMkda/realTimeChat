@@ -17,6 +17,7 @@ const InputSendMessage = () => {
         e.preventDefault()
 
         if (data.chatId == null) return
+        if (text === "") return
 
         await updateDoc(doc(db, 'chats', data.chatId), {
             messages: arrayUnion({
