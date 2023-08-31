@@ -4,16 +4,23 @@ import { useState } from "react"
 import addingChat from "@/firebase/data/addingChat"
 import LoadingData from "@/app/components/LoadingData"
 import Image from "next/image"
+import { useMobileContext } from "@/context/MobileContext"
+import { ChangeUserChat, ChatLink } from "@/app/components/const/const"
+import { useChathContext } from "@/context/chatContext"
 
 const SearchedChats = ({userData}) => {
 
     const { user } = useAuthContext()
-    const [isSeddingData, setIsSeddingData] = useState(false)
+    const { setMainMobile } = useMobileContext()
+    const [ isSeddingData, setIsSeddingData ] = useState(false)
+    const { dispatch } = useChathContext()
 
     const handleSelect = async (data) => {
         setIsSeddingData(true)
         const result = await addingChat(data, user)
         setIsSeddingData(result)
+        setMainMobile(ChatLink)
+        dispatch({type: ChangeUserChat, payload: data})
     }
 
     const imageLoader = () => {

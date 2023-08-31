@@ -14,9 +14,6 @@ const FooterHome = () => {
                 <li className="w-full h-full">
                     <button className="w-full h-full duration-300 hover:bg-slate-700" onClick={() => setMainMobile(ChatLink)}>Chat</button>
                 </li>
-                <li className="w-full h-full">
-                    <button className="w-full h-full duration-300 hover:bg-slate-700" onClick={() => setMainMobile(SettingsLink)}>Settings</button>
-                </li>
             </ul>
         </footer>
     )

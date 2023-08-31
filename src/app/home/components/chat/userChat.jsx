@@ -1,4 +1,5 @@
-import { ChangeUserChat } from "@/app/components/const/const"
+import { ChangeUserChat, ChatLink } from "@/app/components/const/const"
+import { useMobileContext } from "@/context/MobileContext"
 import { useChathContext } from "@/context/chatContext"
 import Image from "next/image"
 
@@ -7,12 +8,15 @@ const UserChat = ({userChat}) => {
     const userInfo = userChat.userInfo
 
     const { dispatch } = useChathContext()
+    const { setMainMobile } = useMobileContext()
+
 
     const imageLoader = () => {
         return userInfo.photoURL
     }
 
     const handleSelect = (u) => {
+        setMainMobile(ChatLink)
         dispatch({ type: ChangeUserChat, payload: u })
     }
     
