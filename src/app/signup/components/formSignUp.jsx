@@ -2,7 +2,6 @@
 import LoadingData from "../../components/LoadingData"
 import Image from "next/image"
 import signUp from "@/firebase/auth/signup"
-
 import { useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 
@@ -39,11 +38,7 @@ const FormSignUp = () => {
         setConfirmPassword(false)
         setIsSeddingData(prevState => !prevState);
 
-        if (!userIcon) {
-            alert("Please choose a file first!")
-            setIsSeddingData(prevState => !prevState);
-            return
-        }
+        
 
         if (password !== password2) {
             setConfirmPassword(true)

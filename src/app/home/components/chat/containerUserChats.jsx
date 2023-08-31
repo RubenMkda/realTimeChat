@@ -38,8 +38,8 @@ const ContainerUserChat = () => {
     }
 
     return (
-        <section className="h-[calc(100%-48px)] overflow-y-auto scroll-p-0.5">
-            {chats.length === 0 ? <EmptySearchedUsers /> : Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => {
+        <section className="h-[calc(100%-58px)] overflow-y-auto scroll-p-0.5">
+            {Object.getOwnPropertyNames(chats).length === 0 ? <EmptySearchedUsers /> : Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => {
                  return <UserChat key={chat[0]} userChat={chat[1]} />
             })}
         </section>

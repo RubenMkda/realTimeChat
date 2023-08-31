@@ -12,7 +12,6 @@ import { MobileContextProvider } from "@/context/MobileContext"
 const SectionHome = () => {
 
     const [isMobile, setIsMobile] = useState(true)
-    const [mainMobile, setMainMobile] = useState(FindUserLink)
 
     const { user } = useAuthContext()
     const router = useRouter()

@@ -26,7 +26,7 @@ const SectionUsersSearch = () => {
                     <SearchUser setUsersData={setUsersData}/>
                     <ContainerSearchedUser usersData={usersData}/>
                     </main>)
-                : (<main className="h-[calc(100%-30px)] p-3">
+                : (<main className="h-[calc(100%-48px)] p-3">
                     <ContainerUserChat />
                     </main>)}
         </section>
